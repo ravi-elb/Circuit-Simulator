@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Circuit Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="elb-logo.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h1 class="title">Electronic Circuit Simulator</h1>
+      <img id="logo" src="logo.png" alt="Chipready logo" class="logo">
+    </div>
+    
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="component-library">
+        <h2>Components</h2>
+        <div class="component-buttons" id="componentButtons">
+          <!-- Component buttons will be inserted here -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Circuit canvas -->
+    <div class="canvas-container">
+      <svg id="circuitCanvas" width="100%" height="400"></svg>
+    </div>
+    
+    <!-- Action buttons -->
+    <div class="action-buttons">
+      <div class="simulation">
+        <button id="runSimulation" class="btn btn-simulation">Run Simulation</button>
+      </div>
+
+      <div class="circuit-results">
+        <button id="saveCircuit" class="btn btn-load">Save Circuit</button>      
+      <label class="btn btn-load">
+        Load Circuit
+        <input type="file" id="loadCircuit" accept=".json" hidden>
+      </label>
+      <button id="downloadPDF" class="btn btn-load">Download PDF</button>
+      </div>
+      <div class="clear-circuit">        
+      <button id="clearCircuit" class="btn btn-clear">Clear Circuit</button>
+      </div>
+    </div>
+    
+    <!-- Simulation results -->
+    <div id="simulationResults" class="simulation-results" style="display: none;">
+      <!-- Simulation results will be inserted here -->
+    </div>
+  </div>
+  
+  <!-- Component properties dialog -->
+  <div id="propertiesDialog" class="properties-dialog" style="display: none;">
+    <div class="dialog-content">
+      <h2 id="propertiesTitle">Component Properties</h2>
+      <div class="property-field">
+        <label>Value</label>
+        <input type="text" id="componentValue">
+      </div>
+      <div class="dialog-buttons">
+        <button id="closeProperties" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
