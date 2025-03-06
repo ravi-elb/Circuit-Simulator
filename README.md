@@ -4,7 +4,7 @@ This project is an electronic circuit simulator that allows users to design and 
 ## Features
 - Add various electronic components (resistors, capacitors, inductors, voltage sources, current sources, ground, diodes, transistors, light bulbs, switches).
 - Connect components with wires.
-- Remove wiree connections by clicking on them
+- Remove wire connections by clicking on them
 - Run simulations to see the circuit summary and node analysis.
 - Save and load circuits as JSON files.
 - Download simulation results as a PDF.
